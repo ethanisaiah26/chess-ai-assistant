@@ -1,0 +1,75 @@
+# AI Chess Assistant
+
+A complete chess analysis and practice assistant built with Python, `python-chess`, and Stockfish.
+
+## Features
+
+- Interactive chessboard with Tkinter
+- Manual move entry and legal move validation
+- FEN and PGN import/export support
+- Undo/redo and game-state detection
+- Stockfish engine integration with automatic executable discovery
+- SAN/UCI move display and evaluation output
+- Practice mode and local analysis workflow
+- GitHub Codespaces support for development
+
+## Requirements
+
+- Python 3.12+
+- Stockfish binary installed and discoverable in PATH
+- Tkinter support (built into most Python installs on Windows and Linux)
+
+## GitHub Codespaces
+
+This repository includes a dev container and Dockerfile for Codespaces.
+
+1. Open the repository in GitHub Codespaces.
+2. The container installs Python dependencies and Stockfish.
+3. Run the application from the terminal:
+
+```bash
+python assistant.py
+```
+
+If the graphical interface is not visible in the browser, run the app locally instead. Desktop GUI applications often require a local desktop session.
+
+## Local Setup (Linux)
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+sudo apt-get update
+sudo apt-get install -y stockfish
+python assistant.py
+```
+
+## Local Setup (Windows)
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+# Install Stockfish from the official site or package manager
+python assistant.py
+```
+
+If `stockfish` is not on your PATH, set the environment variable `STOCKFISH_EXECUTABLE` to the full path to the executable.
+
+## Running Tests
+
+```bash
+pytest -q
+```
+
+## Fair play notice
+
+This project is designed for local practice, study, and post-game review. It does not support automated moves in live games against human opponents on Chess.com or other sites. Use it for authorized practice, training, and offline analysis only.
+
+## Launch notes
+
+- Run the app on a local machine for the GUI experience.
+- In a browser-only Codespace, the desktop interface may not render correctly.
+- For the best experience, use Visual Studio Code Desktop or a local environment.
